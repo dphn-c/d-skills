@@ -1,0 +1,15 @@
+@use '../foundation' as b;
+
+.c-container {
+  margin-inline: auto;
+
+  &--common {
+    @include b.pc {
+      width: min(90%, 96rem);
+    }
+
+    @include b.sp {
+      width: min(90%, 56rem);
+    }
+  }
+}

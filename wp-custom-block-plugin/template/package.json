@@ -1,0 +1,32 @@
+{
+	"name": "my-blocks",
+	"version": "0.1.0",
+	"description": "WordPress custom block plugin template with multi-block auto-loading.",
+	"author": "Your Name",
+	"license": "GPL-2.0-or-later",
+	"scripts": {
+		"prebuild": "rm -rf build",
+		"build": "wp-scripts build --blocks-manifest",
+		"postbuild": "bash scripts/restore-unchanged-builds.sh",
+		"format": "wp-scripts format",
+		"lint:css": "wp-scripts lint-style",
+		"lint:js": "wp-scripts lint-js",
+		"lint:scss": "stylelint \"src/**/*.{css,scss}\"",
+		"lint:scss:fix": "stylelint \"src/**/*.{css,scss}\" --fix",
+		"packages-update": "wp-scripts packages-update",
+		"plugin-zip": "wp-scripts plugin-zip",
+		"start": "wp-scripts start --blocks-manifest"
+	},
+	"dependencies": {
+		"@wordpress/block-editor": "latest",
+		"@wordpress/blocks": "latest"
+	},
+	"devDependencies": {
+		"@wordpress/scripts": "^31.4.0",
+		"postcss": "^8.4.49",
+		"stylelint": "^17.0.0",
+		"stylelint-config-recess-order": "^7.6.1",
+		"stylelint-config-standard-scss": "^17.0.0",
+		"stylelint-order": "^7.0.1"
+	}
+}

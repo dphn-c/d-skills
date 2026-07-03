@@ -1,0 +1,35 @@
+:root {
+  --black: #222;
+  --white: #fff;
+  --primary: #009995;
+  --secondary: #22b49d;
+  --tertiary: #007a77;
+  --accent: #ff4d79;
+  --attention: #e60000;
+  --gray: #b1b1b1;
+  --dark-gray: #999;
+  --bg-dark-gray: #ddd;
+  --bg-gray: #f7f7f7;
+  --bg-green: #e5f5f4;
+  --bg-yellow: #fffcd7;
+  --link: #009995;
+  --btn: #009995;
+  --btn-bg: #fff;
+}
+
+$white: var(--white);
+$black: var(--black);
+$primary: var(--primary);
+$secondary: var(--secondary);
+$tertiary: var(--tertiary);
+$accent: var(--accent);
+$attention: var(--attention);
+$gray: var(--gray);
+$dark-gray: var(--dark-gray);
+$bg-dark-gray: var(--bg-dark-gray);
+$bg-gray: var(--bg-gray);
+$bg-green: var(--bg-green);
+$bg-yellow: var(--bg-yellow);
+$link: var(--link);
+$btn: var(--btn);
+$btn-bg: var(--btn-bg);

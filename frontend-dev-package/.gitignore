@@ -1,0 +1,8 @@
+*.ai
+*.psd
+*.css.map
+*.DS_Store
+node_modules/
+package-lock.json
+docs/
+built/

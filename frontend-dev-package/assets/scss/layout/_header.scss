@@ -1,0 +1,33 @@
+@use '../foundation' as b;
+
+.l-header {
+  width: 100%;
+  border-bottom: 0.1rem solid b.$bg-dark-gray;
+
+  &__container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-block: 2rem;
+  }
+
+  &__logo {
+    font-size: b.$sub-ttl;
+    font-weight: 700;
+    line-height: 1.2;
+    color: b.$primary;
+  }
+}
+
+.l-header-nav {
+  &__list {
+    display: flex;
+    gap: b.$menu-gap;
+  }
+
+  &__link {
+    font-size: b.$m-tx;
+    font-weight: 500;
+    color: b.$black;
+  }
+}

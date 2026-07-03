@@ -1,0 +1,20 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "my-blocks/sample-box",
+	"version": "0.1.0",
+	"title": "Sample Box",
+	"category": "design",
+	"icon": "smiley",
+	"description": "A sample block demonstrating the multi-block plugin structure.",
+	"keywords": ["sample", "box"],
+	"textdomain": "my-blocks",
+	"example": {},
+	"supports": {
+		"html": false,
+		"anchor": true
+	},
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css"
+}

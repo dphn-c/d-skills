@@ -1,0 +1,29 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Dependencies (if npm install is run inside a skill template)
+node_modules/
+
+# Build output
+build/
+dist/
+
+# Logs
+*.log
+npm-debug.log*
+
+# Environment
+.env
+.env.*
+
+# Editor / IDE
+.idea/
+*.swp
+*.swo
+*~
+
+# Archives
+*.zip
+*.tgz

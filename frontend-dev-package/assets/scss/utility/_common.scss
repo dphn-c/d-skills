@@ -1,0 +1,314 @@
+@use '../foundation' as b;
+
+.u-wid-fit {
+  width: fit-content;
+  margin-inline: auto;
+}
+
+.u-tac {
+  text-align: center;
+}
+
+@include b.pc {
+  .u-pc-tac {
+    text-align: center;
+  }
+}
+
+@include b.sp {
+  .u-sp-tac {
+    text-align: center;
+  }
+}
+
+.u-tal {
+  text-align: left;
+}
+
+.u-tar {
+  text-align: right;
+}
+
+.u-center {
+  margin: 0 auto;
+}
+
+.u-right {
+  margin: 0 0 0 auto;
+}
+
+.u-left {
+  margin: 0 auto 0 0;
+}
+
+.u-fw-b {
+  font-weight: bold;
+}
+
+.u-fz-s {
+  font-size: b.$s-tx;
+}
+
+.u-fz-common {
+  font-size: b.$common-tx;
+}
+
+.u-fz-m {
+  font-size: b.$m-tx;
+}
+
+.u-fz-l {
+  font-size: b.$l-tx;
+}
+
+.u-fz-xl {
+  font-size: b.$xl-tx;
+}
+
+.u-fw300 {
+  font-weight: 300;
+}
+
+.u-fw400 {
+  font-weight: 400;
+}
+
+.u-fw600 {
+  font-weight: 600;
+}
+
+.u-fw700 {
+  font-weight: 700;
+}
+
+.u-fw900 {
+  font-weight: 900;
+}
+
+.u-mt-00 {
+  margin-top: 0;
+}
+
+.u-mt-10 {
+  margin-top: 1rem;
+}
+
+.u-mt-20 {
+  margin-top: 2rem;
+}
+
+.u-mt-30 {
+  margin-top: 3rem;
+}
+
+.u-mt-40 {
+  margin-top: 4rem;
+}
+
+.u-mt-50 {
+  margin-top: 5rem;
+}
+
+.u-mt-60 {
+  margin-top: 6rem;
+}
+
+.u-mt-70 {
+  margin-top: 7rem;
+}
+
+.u-mt-80 {
+  margin-top: 8rem;
+}
+
+.u-mt-90 {
+  margin-top: 9rem;
+}
+
+.u-mt-100 {
+  margin-top: 10rem;
+}
+
+.u-mb-00 {
+  margin-bottom: 0;
+}
+
+.u-mb-10 {
+  margin-bottom: 1rem;
+}
+
+.u-mb-20 {
+  margin-bottom: 2rem;
+}
+
+.u-mb-30 {
+  margin-bottom: 3rem;
+}
+
+.u-mb-40 {
+  margin-bottom: 4rem;
+}
+
+.u-mb-50 {
+  margin-bottom: 5rem;
+}
+
+.u-mb-60 {
+  margin-bottom: 6rem;
+}
+
+.u-mb-70 {
+  margin-bottom: 7rem;
+}
+
+.u-mb-80 {
+  margin-bottom: 8rem;
+}
+
+.u-mb-90 {
+  margin-bottom: 9rem;
+}
+
+.u-mb-100 {
+  margin-bottom: 10rem;
+}
+
+.u-lh12 {
+  line-height: 1.2;
+}
+
+.u-lh13 {
+  line-height: 1.3;
+}
+
+.u-lh15 {
+  line-height: 1.5;
+}
+
+.u-lh16 {
+  line-height: 1.6;
+}
+
+.u-lh18 {
+  line-height: 1.8;
+}
+
+.u-lh20 {
+  line-height: 2;
+}
+
+.u-underline {
+  text-decoration: underline;
+}
+
+.u-pt-10 {
+  padding-top: 1rem;
+}
+
+.u-pt-15 {
+  padding-top: 1.5rem;
+}
+
+.u-pt-20 {
+  padding-top: 2rem;
+}
+
+.u-pt-30 {
+  padding-top: 3rem;
+}
+
+.u-pt-40 {
+  padding-top: 4rem;
+}
+
+.u-pb-0 {
+  padding-bottom: 0;
+}
+
+.u-pb-10 {
+  padding-bottom: 1rem;
+}
+
+.u-pb-15 {
+  padding-bottom: 1.5rem;
+}
+
+.u-pb-20 {
+  padding-bottom: 2rem;
+}
+
+.u-pb-30 {
+  padding-bottom: 3rem;
+}
+
+.u-pb-40 {
+  padding-bottom: 4rem;
+}
+
+.u-pl-10 {
+  padding-left: 1rem;
+}
+
+.u-pr-10 {
+  padding-right: 1rem;
+}
+
+.u-pl-15 {
+  padding-left: 1.5rem;
+}
+
+.u-pr-15 {
+  padding-right: 1.5rem;
+}
+
+.u-pl-20 {
+  padding-left: 2rem;
+}
+
+.u-pr-20 {
+  padding-right: 2rem;
+}
+
+.u-p-20 {
+  padding: 2rem;
+}
+
+.u-pc-none {
+  @include b.pc {
+    display: none;
+  }
+}
+
+.u-sp-none {
+  @include b.sp {
+    display: none;
+  }
+}
+
+.u-none {
+  display: none;
+}
+
+.u-hidden {
+  visibility: hidden;
+}
+
+.u-central {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.u-pointer {
+  cursor: pointer;
+}
+
+.u-overflow-hidden {
+  overflow: hidden;
+}
+
+.u-indent-1em {
+  display: inline-block;
+  padding-left: 1em;
+  text-indent: -1em;
+}
