@@ -51,6 +51,7 @@ Author URI: $AUTHOR_URI
   "version": "1.0.0",
   "type": "module",
   "private": true,
+  "packageManager": "pnpm@10.34.5",
   "scripts": {
     "build": "vite build",
     "dev": "vite build --watch",
@@ -63,7 +64,7 @@ Author URI: $AUTHOR_URI
     "stylelint": "^17.2.0",
     "stylelint-config-recess-order": "^7.6.1",
     "stylelint-config-standard-scss": "^17.0.0",
-    "vite": "^7.2.7"
+    "vite": "^8.0.16"
   }
 }
 ```
@@ -109,11 +110,13 @@ export default defineConfig({
   build: {
     outDir: 'assets',
     emptyOutDir: false,
+    cssCodeSplit: false,
     rollupOptions: {
       input: {
         main: resolve(__dirname, 'assets/dev/main.js'),
       },
       output: {
+        format: 'iife',
         entryFileNames: 'js/bundle.js',
         assetFileNames: (assetInfo) => {
           const fileName = assetInfo.names?.[0] || assetInfo.name || '';

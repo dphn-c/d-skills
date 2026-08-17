@@ -1,0 +1,22 @@
+@use '../foundation' as b;
+
+.p-sample-hero {
+  padding-block: 6rem 8rem;
+
+  &__container {
+    text-align: center;
+  }
+
+  &__title {
+    font-size: b.$main-ttl;
+    font-weight: 700;
+    line-height: 1.4;
+    color: b.$primary;
+  }
+
+  &__lead {
+    margin-top: 2rem;
+    font-size: b.$l-tx;
+    line-height: 1.6;
+  }
+}

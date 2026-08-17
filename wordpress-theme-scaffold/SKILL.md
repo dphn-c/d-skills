@@ -23,7 +23,7 @@ Task Progress:
 - [ ] Step 5: Generate template files (index, page, single, archive, header, footer, 404)
 - [ ] Step 6: Generate SCSS foundation
 - [ ] Step 7: Generate JS entry point
-- [ ] Step 8: Run composer install && npm install
+- [ ] Step 8: Run composer install && pnpm install
 ```
 
 ## Step 1: Gather Project Info
@@ -40,23 +40,17 @@ Derive from the above:
 - `$NAMESPACE` = PHP namespace (e.g. `MyClient`)
 - `$THEME_NAME` = display name
 
-## Step 2: Copy Template Packages
+## Step 2: Copy Template Package
 
-**PHP / Composer / templates:** Copy from **`wordpress-theme-template`** SKILL first.
-
-```bash
-rsync -a --exclude='SKILL.md' --exclude='README.md' \
-  ~/skills/wordpress-theme-template/ $THEME_SLUG/
-```
-
-**Frontend assets (JS / SCSS / build config):** Merge from **`frontend-dev-package`** SKILL.
+Copy from **`wordpress-theme-starter`** (PHP + Vite/SCSS/JS の完全版).
 
 ```bash
-rsync -a --exclude='SKILL.md' --exclude='README.md' --exclude='index.html' \
-  ~/skills/frontend-dev-package/ $THEME_SLUG/
-cd $THEME_SLUG
-cp vite.config.wordpress.js vite.config.js
-# package.json "dev": "vite build --watch"
+rsync -a \
+  --exclude='SKILL.md' \
+  --exclude='README.md' \
+  --exclude='DISCUSSION.md' \
+  --exclude='node_modules' \
+  ~/skills/wordpress-theme-starter/ $THEME_SLUG/
 ```
 
 Replace placeholders (`ThemeName` → `$NAMESPACE`, `my-theme` → `$THEME_SLUG`, `My Theme 2025` → `$THEME_NAME`).
@@ -136,8 +130,9 @@ For detailed file contents, see [reference.md](reference.md).
 
 Key points:
 - `composer.json`: PSR-4 maps `$NAMESPACE\\` to `inc/`
-- `package.json`, `vite.config.js`, `.stylelintrc.js`, `.prettierrc`, `.vscode/settings.json`: Copy from [frontend-dev-package](../frontend-dev-package/SKILL.md); use `vite.config.wordpress.js` as `vite.config.js`
-- `vite.config.js`: Input from `assets/dev/main.js`, output JS to `assets/js/bundle.js`, CSS to `assets/css/style.css`
+- `package.json`, `vite.config.js`, `.stylelintrc.js`, `.prettierrc`, `.vscode/settings.json`: Copy from [wordpress-theme-starter](../wordpress-theme-starter/SKILL.md)
+- `vite.config.js`: Input from `assets/dev/main.js`, output JS to `assets/js/bundle.js` (Rollup **IIFE**), CSS to `assets/css/style.css`
+- Package manager is **pnpm** (`package.json` `packageManager` field)
 
 ### Required devDependencies (always include)
 
@@ -148,7 +143,7 @@ Key points:
   "stylelint": "^17.2.0",
   "stylelint-config-recess-order": "^7.6.1",
   "stylelint-config-standard-scss": "^17.0.0",
-  "vite": "^7.2.7"
+  "vite": "^8.0.16"
 }
 ```
 
@@ -302,13 +297,13 @@ After generating all files, run:
 
 ```bash
 composer install
-npm install
+pnpm install
 ```
 
 Then verify the build works:
 
 ```bash
-npm run build
+pnpm run build
 ```
 
 ## Adding New Functionality
@@ -356,6 +351,7 @@ npm run build
 
 ## Additional Resources
 
-- For PHP / Composer / template scaffold, see [wordpress-theme-template](../wordpress-theme-template/SKILL.md)
-- For frontend scaffold (assets/dev, assets/scss, build config), see [frontend-dev-package](../frontend-dev-package/SKILL.md)
+- For the complete copyable theme (PHP + Vite/SCSS/JS), see [wordpress-theme-starter](../wordpress-theme-starter/SKILL.md)
+- For PHP-only scaffold, see [wordpress-theme-template](../wordpress-theme-template/SKILL.md)
+- For static HTML frontend scaffold, see [frontend-dev-package](../frontend-dev-package/SKILL.md)
 - For complete file templates (customization reference), see [reference.md](reference.md)

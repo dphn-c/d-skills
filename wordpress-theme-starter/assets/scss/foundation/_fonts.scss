@@ -1,0 +1,37 @@
+@use 'mixin' as mx;
+
+:root {
+  --jp-common:
+    'Noto Sans JP', 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', '游ゴシック', meiryo, sans-serif;
+  --main-ttl: 3.2rem;
+  --sub-ttl: 2.4rem;
+  --xxl-tx: 2.2rem;
+  --xl-tx: 2rem;
+  --l-tx: 1.8rem;
+  --common-tx: 1.6rem;
+  --m-tx: 1.4rem;
+  --s-tx: 1.2rem;
+  --xs-tx: 1rem;
+
+  @include mx.sp {
+    --main-ttl: clamp(2.8rem, 4vw, 3.2rem);
+    --sub-ttl: clamp(2rem, 3.5vw, 2.4rem);
+    --xxl-tx: clamp(1.9rem, 3.2vw, 2.2rem);
+    --xl-tx: clamp(1.8rem, 3vw, 2rem);
+    --l-tx: clamp(1.7rem, 2.8vw, 1.8rem);
+    --common-tx: clamp(1.6rem, 2.6vw, 1.7rem);
+    --m-tx: clamp(1.4rem, 2.5vw, 1.6rem);
+    --s-tx: clamp(1.2rem, 2.2vw, 1.4rem);
+  }
+}
+
+$jp-common: var(--jp-common);
+$main-ttl: var(--main-ttl);
+$sub-ttl: var(--sub-ttl);
+$xxl-tx: var(--xxl-tx);
+$xl-tx: var(--xl-tx);
+$l-tx: var(--l-tx);
+$common-tx: var(--common-tx);
+$m-tx: var(--m-tx);
+$s-tx: var(--s-tx);
+$xs-tx: var(--xs-tx);

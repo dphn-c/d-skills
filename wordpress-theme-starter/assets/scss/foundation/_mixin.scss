@@ -1,0 +1,60 @@
+@use 'sass:map';
+
+@mixin pc {
+  @media screen and (width >= 768px) {
+    @content;
+  }
+}
+
+@mixin hover {
+  @media (any-hover: hover) {
+    @content;
+  }
+}
+
+@mixin sp {
+  @media screen and (width <= 767px) {
+    @content;
+  }
+}
+
+$mq-breakpoints: (
+  'xs': 321px,
+  'sm': 576px,
+  'md': 768px,
+  'lg': 1024px,
+  'xl': 1320px
+) !default;
+
+@mixin media($breakpoint: md, $rule: min) {
+  $breakpoint: map.get($mq-breakpoints, $breakpoint);
+
+  @if $rule == max {
+    $breakpoint: $breakpoint - 1px;
+  }
+
+  @media screen and (#{$rule}-width: $breakpoint) {
+    @content;
+  }
+}
+
+@mixin full-width {
+  width: 100vw;
+  margin-inline: calc(50% - 50vw);
+}
+
+@mixin secondary-ttl {
+  padding-left: 1.6rem;
+  font-size: var(--sub-ttl);
+  font-weight: 700;
+  line-height: 1.4;
+  color: var(--primary);
+  border-left: 0.4rem solid var(--primary);
+}
+
+@mixin tertiary-title {
+  font-size: var(--l-tx);
+  font-weight: 700;
+  line-height: 1.5;
+  color: var(--primary);
+}

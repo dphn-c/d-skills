@@ -1,6 +1,6 @@
 ---
 name: wordpress-theme-template
-description: Copy WordPress theme PHP scaffold (Composer PSR-4, template routing, CPT, REST API, pagination) to start a new WP theme. Use with frontend-dev-package for CSS/JS build tooling.
+description: Copy WordPress theme PHP scaffold (Composer PSR-4, template routing, CPT, REST API, pagination). Use when scaffolding PHP-only theme files, or when the frontend already exists. For a complete PHP + Vite theme, use wordpress-theme-starter.
 ---
 
 # WordPress Theme Template
@@ -9,7 +9,7 @@ Composer PSR-4 + テンプレートルーティング + サンプル実装の Wo
 
 **Template path:** `~/skills/wordpress-theme-template/`
 
-CSS / JS ビルド設定（Vite, SCSS, Stylelint, Prettier）は **`frontend-dev-package`** SKILL を併用する。
+PHP のみ。WordPress テーマを PHP + フロント込みで立ち上げる場合は **`wordpress-theme-starter`** を使う。
 
 ## When to Use
 
@@ -38,22 +38,9 @@ rsync -a \
 | `my-theme` | `my-client-2025` | `composer.json`, `style.css`, `Assets.php`, API namespace |
 | `My Theme 2025` | display name | `style.css` |
 
-### 2. Frontend assets（別スキル）
+### 2. Frontend assets
 
-```bash
-rsync -a \
-  --exclude='SKILL.md' \
-  --exclude='README.md' \
-  --exclude='index.html' \
-  ~/skills/frontend-dev-package/ \
-  /path/to/wp-content/themes/my-theme-2025/
-
-cd /path/to/wp-content/themes/my-theme-2025
-cp vite.config.wordpress.js vite.config.js
-# package.json "dev": "vite build --watch"
-npm install
-npm run build
-```
+新規 WP テーマは **`wordpress-theme-starter`**（PHP + Vite、pnpm）を優先する。PHP 既存テーマへフロントだけ足す場合は `frontend-dev-package` をマージする。
 
 ### 3. Composer
 
@@ -72,10 +59,9 @@ composer dump-autoload
 | PHP classes | `Setup.php`, `Assets.php`, `SamplePostType.php`, `SamplePostApi.php`, `PreGetPosts.php`, `Pagination.php`, `Viewport.php` |
 | Parts | `template_parts/breadcrumb.php` |
 
-## NOT Included (use frontend-dev-package)
+## NOT Included
 
-- `package.json`, `vite.config.js`, `.stylelintrc.js`, `.prettierrc`
-- `assets/dev/`, `assets/scss/`
+CSS / JS ビルドは含まない。完全版は **`wordpress-theme-starter`**。
 
 ## Template Routing
 
@@ -101,17 +87,18 @@ composer dump-autoload
 
 ## Related Skills
 
-- [frontend-dev-package](../frontend-dev-package/SKILL.md) — Vite + SCSS + JS build scaffold
+- [wordpress-theme-starter](../wordpress-theme-starter/SKILL.md) — PHP + Vite/SCSS/JS 完全版（pnpm、IIFE）
+- [frontend-dev-package](../frontend-dev-package/SKILL.md) — 静的 HTML 向け Vite + SCSS + JS
 - [wordpress-theme-scaffold](../wordpress-theme-scaffold/SKILL.md) — Full WP theme scaffold workflow
 - [js-workflow](../js-workflow/SKILL.md) — JS module architecture
 - [scss-workflow](../scss-workflow/SKILL.md) — SCSS / FLOCSS workflow
 
 ## Validation
 
-After copy, placeholder replacement, `composer install`, and frontend-dev-package merge:
+After copy, placeholder replacement, and `composer install`:
 
 1. `composer install` — no errors
-2. `npm run build` — CSS/JS output to `assets/css/style.css`, `assets/js/bundle.js`
+2. Full theme (starter): `pnpm run build` — CSS/JS output to `assets/css/style.css`, `assets/js/bundle.js`
 3. Activate theme in WordPress — no PHP fatal errors
 4. Visit `/sample/` archive — sample CPT archive renders
 5. REST: `GET /wp-json/my-theme/v1/sample-posts` — returns JSON

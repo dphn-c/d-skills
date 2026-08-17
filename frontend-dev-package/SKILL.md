@@ -12,8 +12,10 @@ Vite + SCSS + JavaScript の開発テンプレート。新規プロジェクト�
 ## When to Use
 
 - 新規の静的 HTML / CSS / JS プロジェクトを立ち上げる
-- WordPress テーマに `assets/dev/` + `assets/scss/` + ビルド設定を追加する
+- 既存 WordPress テーマに `assets/dev/` + `assets/scss/` + ビルド設定だけ足す
 - `js-workflow` / `scss-workflow` に沿った初期構成が必要なとき
+
+新規 WordPress テーマ（PHP + フロント）は **`wordpress-theme-starter`** を使う。
 
 ## Copy to New Project
 
@@ -52,7 +54,7 @@ cp vite.config.wordpress.js vite.config.js
 
 `package.json` の `dev` を `"vite build --watch"` に変更。`index.html` は不要（削除可）。
 
-PHP・Composer 構成は **`wordpress-theme-template`** SKILL を併用する（全体ワークフローは `wordpress-theme-scaffold` も参照）。
+新規 WP テーマは **`wordpress-theme-starter`**。PHP だけ足す場合は `wordpress-theme-template`。全体ワークフローは `wordpress-theme-scaffold`。
 
 ## What's Included
 
@@ -76,6 +78,7 @@ PHP・Composer 構成は **`wordpress-theme-template`** SKILL を併用する（
 
 - [js-workflow](../js-workflow/SKILL.md) — JS module architecture (View / Model / Control)
 - [scss-workflow](../scss-workflow/SKILL.md) — FLOCSS, Stylelint, build pipeline
+- [wordpress-theme-starter](../wordpress-theme-starter/SKILL.md) — 完全版 WP テーマ（PHP + Vite、pnpm、IIFE）
 - [wordpress-theme-template](../wordpress-theme-template/SKILL.md) — WP theme PHP scaffold (Composer, templates, samples)
 - [wordpress-theme-scaffold](../wordpress-theme-scaffold/SKILL.md) — Full WP theme scaffold workflow
 - [css-coding-conventions](../css-coding-conventions/SKILL.md) — SCSS coding rules

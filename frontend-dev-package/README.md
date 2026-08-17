@@ -56,6 +56,8 @@ npm run preview  # built/ をローカル確認
 
 **WordPress テーマ**
 
+新規テーマは **`wordpress-theme-starter`**（PHP + Vite、pnpm、IIFE）を使う。このパッケージからフロントだけ足す場合:
+
 ```bash
 cp vite.config.wordpress.js vite.config.js
 ```
@@ -72,7 +74,7 @@ npm run build  # 本番ビルド
 ```
 
 PHP 側で `assets/css/style.css` と `assets/js/bundle.js` を enqueue してください。  
-WordPress テーマの PHP スキャフォールドは `wordpress-theme-scaffold` SKILL を参照。
+完全な WP テーマ雛形は `wordpress-theme-starter`、立ち上げ手順は `wordpress-theme-scaffold`。
 
 ---
 
@@ -143,5 +145,6 @@ npm run lint:scss:fix   # Stylelint 自動修正
 
 - `js-workflow` — JS モジュール構成 (View / Model / Control)
 - `scss-workflow` — FLOCSS 構成・Stylelint・ビルドパイプライン
+- `wordpress-theme-starter` — 完全版 WP テーマ（PHP + Vite、pnpm）
 - `wordpress-theme-scaffold` — WordPress テーマ全体のスキャフォールド
 - `css-coding-conventions` — SCSS コーディング規約

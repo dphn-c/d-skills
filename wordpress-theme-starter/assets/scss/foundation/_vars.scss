@@ -1,0 +1,13 @@
+:root {
+  --shadow: 0 0 0.7rem rgb(0 0 0 / 20%);
+  --menu-gap: clamp(1.2rem, 1vw, 2.5rem);
+  --link-hover: 0.6;
+  --transition: 0.3s ease;
+  --drop-shadow: 0 0 0.5rem rgb(0 0 0 / 20%);
+}
+
+$shadow: var(--shadow);
+$menu-gap: var(--menu-gap);
+$link-hover: var(--link-hover);
+$transition: var(--transition);
+$drop-shadow: var(--drop-shadow);

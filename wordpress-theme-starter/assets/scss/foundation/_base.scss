@@ -1,0 +1,88 @@
+@use 'mixin' as mx;
+@use 'vars' as var;
+@use 'colors' as c;
+@use 'fonts' as f;
+
+html {
+  scroll-behavior: smooth;
+  font-size: 62.5%;
+}
+
+body {
+  width: 100vw;
+  min-height: 100dvh;
+  overflow-x: auto;
+  overscroll-behavior: none;
+  font-family: f.$jp-common;
+  font-size: f.$common-tx;
+  font-weight: 400;
+  font-feature-settings: 'palt';
+  line-height: 1.5;
+  color: c.$black;
+  background-color: c.$white;
+  text-rendering: optimizelegibility;
+
+  @include mx.media('xl') {
+    overflow-x: hidden;
+  }
+
+  @include mx.sp {
+    overflow-x: hidden;
+  }
+}
+
+blockquote,
+dd,
+dl,
+figcaption,
+h1,
+h2,
+h3,
+h4,
+h5,
+ul,
+ol,
+li,
+p {
+  font-size: inherit;
+  font-weight: inherit;
+  color: inherit;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+figure,
+picture {
+  margin: 0;
+  line-height: 0;
+}
+
+pre {
+  white-space: pre;
+}
+
+button {
+  cursor: pointer;
+}
+
+:where(button, a) {
+  @include mx.hover {
+    &:hover {
+      opacity: var.$link-hover;
+    }
+  }
+
+  &:not([tabindex='-1']) {
+    &:focus-visible {
+      outline: 0.2rem solid c.$primary;
+      outline-offset: 0.3rem;
+    }
+  }
+}
+
+strong {
+  font-weight: bold;
+}

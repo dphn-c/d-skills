@@ -1,0 +1,17 @@
+@use '../foundation' as b;
+
+.l-footer {
+  width: 100%;
+  margin-top: auto;
+  background-color: b.$bg-gray;
+
+  &__container {
+    padding-block: 3rem;
+  }
+
+  &__copy {
+    font-size: b.$s-tx;
+    color: b.$gray;
+    text-align: center;
+  }
+}
