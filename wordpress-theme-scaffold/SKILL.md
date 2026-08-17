@@ -59,11 +59,11 @@ Steps 3–7 below describe individual files for reference when customizing. The 
 
 ```
 $THEME_SLUG/
+├── dev/
+│   ├── main.js
+│   └── modules/            (empty)
 ├── assets/
 │   ├── css/                    (empty - Vite output)
-│   ├── dev/
-│   │   ├── main.js
-│   │   └── modules/            (empty)
 │   ├── fonts/                  (empty)
 │   ├── images/                 (empty)
 │   ├── js/                     (empty - Vite output)
@@ -131,7 +131,7 @@ For detailed file contents, see [reference.md](reference.md).
 Key points:
 - `composer.json`: PSR-4 maps `$NAMESPACE\\` to `inc/`
 - `package.json`, `vite.config.js`, `.stylelintrc.js`, `.prettierrc`, `.vscode/settings.json`: Copy from [wordpress-theme-starter](../wordpress-theme-starter/SKILL.md)
-- `vite.config.js`: Input from `assets/dev/main.js`, output JS to `assets/js/bundle.js` (Rollup **IIFE**), CSS to `assets/css/style.css`
+- `vite.config.js`: Input from `dev/main.js`, output JS to `assets/js/bundle.js` (Rollup **IIFE**), CSS to `assets/css/style.css`
 - Package manager is **pnpm** (`package.json` `packageManager` field)
 
 ### Required devDependencies (always include)
@@ -281,11 +281,11 @@ Key patterns:
 
 ## Step 7: JS Entry Point
 
-`assets/dev/main.js`:
+`dev/main.js`:
 
 ```javascript
 // SCSS import
-import '../scss/style.scss';
+import '../assets/scss/style.scss';
 
 // Module imports (add as needed)
 // import ModuleName from './modules/module-name.js';
@@ -334,8 +334,8 @@ pnpm run build
 
 ### New JS module
 
-1. Create `assets/dev/modules/<feature-name>/` following View / Model / Control separation with class-based files (see [js-workflow](../../js-workflow/SKILL.md))
-2. Import and initialize in `assets/dev/main.js`
+1. Create `dev/modules/<feature-name>/` following View / Model / Control separation with class-based files (see [js-workflow](../../js-workflow/SKILL.md))
+2. Import and initialize in `dev/main.js`
 
 ## inc/ Directory Conventions
 

@@ -2,7 +2,7 @@ import { defineConfig } from 'vite';
 import { resolve } from 'path';
 
 const rootDir = import.meta.dirname;
-const DEV_SOURCE_ROOT = resolve(rootDir, 'assets/dev');
+const DEV_SOURCE_ROOT = resolve(rootDir, 'dev');
 
 function suppressDevFallbackSourcemapPlugin() {
   return {
@@ -60,7 +60,7 @@ export default defineConfig({
     cssCodeSplit: false,
     rollupOptions: {
       input: {
-        main: resolve(rootDir, 'assets/dev/main.js'),
+        main: resolve(rootDir, 'dev/main.js'),
       },
       output: {
         format: 'iife',
@@ -88,6 +88,7 @@ export default defineConfig({
   resolve: {
     alias: {
       '@': resolve(rootDir, 'assets'),
+      '@dev': resolve(rootDir, 'dev'),
     },
   },
   plugins: [suppressDevFallbackSourcemapPlugin(), cssUrlRebasePlugin()],

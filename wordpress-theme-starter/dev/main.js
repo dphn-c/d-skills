@@ -1,5 +1,5 @@
 // SCSS import
-import '../scss/style.scss';
+import '../assets/scss/style.scss';
 
 document.documentElement.classList.add('js');
 

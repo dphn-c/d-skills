@@ -1,6 +1,6 @@
 ---
 name: js-workflow
-description: Guides JavaScript module architecture for Vite-based HTML/SCSS/JS projects — feature-based folders, MVC-style separation (View, Model/Business, Control), class-based implementation, and strict DRY. Use when creating, editing, or reviewing JS modules under assets/dev/, adding interactive features, or refactoring frontend logic.
+description: Guides JavaScript module architecture for Vite-based HTML/SCSS/JS projects — feature-based folders, MVC-style separation (View, Model/Business, Control), class-based implementation, and strict DRY. Use when creating, editing, or reviewing JS modules under dev/ (WordPress) or assets/dev/ (static HTML), adding interactive features, or refactoring frontend logic.
 ---
 
 # JS Workflow
@@ -23,7 +23,7 @@ Template path: `~/skills/frontend-dev-package/`
 | Type | Deploy output | Notes |
 |------|---------------|-------|
 | **HTML / CSS / JS only** (static) | `built/` | Upload `built/` contents to the server. See below. |
-| **WordPress theme** | `assets/css/`, `assets/js/` | PHP templates load built assets; use `vite build --watch` during theme dev. |
+| **WordPress theme** | `assets/css/`, `assets/js/` | JS source is theme-root `dev/` (not `assets/dev/`). PHP enqueues built files; use `vite build --watch` during theme dev. |
 
 ### Static HTML projects (`built/` deploy)
 
@@ -80,7 +80,7 @@ new PriceChart('#price-chart-canvas');
 
 ## Architecture: View / Model / Control
 
-Organize each **feature** (e.g. `price-chart`, `accordion`, `modal`) as a self-contained module under `assets/dev/modules/<feature-name>/`.
+Organize each **feature** (e.g. `price-chart`, `accordion`, `modal`) as a self-contained module under `dev/modules/<feature-name>/` (WordPress) or `assets/dev/modules/<feature-name>/` (static HTML).
 
 Within a feature, separate concerns by role — **prefer class-based implementation** for each role:
 
@@ -123,7 +123,7 @@ Follow DRY strictly across JS modules. Before adding code, check whether the sam
 
 **Across features:**
 
-- If two modules need the same pure utility, extract to `assets/dev/utils/<name>.js` instead of copying.
+- If two modules need the same pure utility, extract to `dev/utils/<name>.js` (WordPress) or `assets/dev/utils/<name>.js` (static HTML) instead of copying.
 - If two features share domain logic, prefer a shared Model or utility module over inline duplication in Control classes.
 
 ```javascript
@@ -162,9 +162,9 @@ assets/dev/modules/price-chart/
 
 ## Adding a New Feature Module
 
-1. Create `assets/dev/modules/<feature-name>/` with at least a Control class (`index.js`).
+1. Create `dev/modules/<feature-name>/` (WordPress) or `assets/dev/modules/<feature-name>/` (static HTML) with at least a Control class (`index.js`).
 2. Split into Model / View classes when the feature grows beyond trivial DOM + data.
-3. Import and instantiate in `assets/dev/main.js`:
+3. Import and instantiate in `dev/main.js` (WordPress) or `assets/dev/main.js` (static HTML):
 
 ```javascript
 import FeatureName from './modules/feature-name/index.js';

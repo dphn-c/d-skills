@@ -113,7 +113,7 @@ export default defineConfig({
     cssCodeSplit: false,
     rollupOptions: {
       input: {
-        main: resolve(__dirname, 'assets/dev/main.js'),
+        main: resolve(__dirname, 'dev/main.js'),
       },
       output: {
         format: 'iife',
@@ -778,11 +778,11 @@ body {
 
 ## JS Entry Point
 
-### assets/dev/main.js
+### dev/main.js
 
 ```javascript
 // SCSS import
-import '../scss/style.scss';
+import '../assets/scss/style.scss';
 
 // Module imports (add as needed)
 // import ModuleName from './modules/module-name.js';

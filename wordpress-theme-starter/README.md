@@ -55,8 +55,8 @@ my-theme-2025/
 ├── pages/               page-{slug}.php
 ├── singles/             single-{post_type}.php
 ├── archives/            archive-{name}.php
+├── dev/                 JS ソース（main.js, modules/, utils/）
 ├── assets/
-│   ├── dev/             JS ソース（main.js, modules/, utils/）
 │   ├── scss/            FLOCSS
 │   ├── css/             ← Vite 出力
 │   ├── js/              ← Vite 出力（bundle.js = IIFE）

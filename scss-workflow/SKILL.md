@@ -24,7 +24,7 @@ Template path: `~/skills/frontend-dev-package/` — includes full FLOCSS `assets
 | **Stylelint** | Linting + property order auto-sort (recess-order) | `npm run lint:scss:fix` |
 | **Prettier** | Code formatting | Runs via editor or CLI |
 
-Entry point: `assets/dev/main.js` → imports `assets/scss/style.scss`
+Entry point: `assets/dev/main.js` (static HTML) or `dev/main.js` (WordPress) → imports `assets/scss/style.scss`
 
 | Project type | Build output |
 |--------------|--------------|
@@ -57,7 +57,7 @@ Upload **`built/`** to the server. The source `index.html` in the repo root stay
 
 ### WordPress themes
 
-WordPress projects build into `assets/css/` and `assets/js/`; PHP templates enqueue those paths. Use `vite build --watch` (often via `npm run dev`) instead of the `built/` workflow.
+WordPress projects: JS source is theme-root `dev/` (`dev/main.js` imports `assets/scss/style.scss`). Build output is `assets/css/` and `assets/js/`. Use `vite build --watch` (often via `pnpm run dev`) instead of the `built/` workflow.
 
 ### VS Code (`.vscode/settings.json`)
 

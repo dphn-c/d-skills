@@ -63,7 +63,7 @@ pnpm run build
 | PHP classes | `Setup.php`, `Assets.php`, `SamplePostType.php`, `SamplePostApi.php`, `PreGetPosts.php`, `Pagination.php`, `Viewport.php` |
 | Parts | `template_parts/breadcrumb.php` |
 | Build | Vite (production JS: **IIFE**), Sass, Stylelint, Prettier, pnpm |
-| JS | `assets/dev/main.js`, `modules/`, `utils/` |
+| JS | `dev/main.js`, `dev/modules/`, `dev/utils/` |
 | SCSS | FLOCSS 5 layers + `foundation/` + `utility/_common.scss` |
 
 ## Template Routing
@@ -95,7 +95,7 @@ pnpm run build
 ### New SCSS / JS module
 
 - SCSS: レイヤーに `_name.scss` を追加し、その `_index.scss` に `@use` を追記（`scss-workflow`）
-- JS: `assets/dev/modules/<feature-name>/` を作り `main.js` から import（`js-workflow`）
+- JS: `dev/modules/<feature-name>/` を作り `dev/main.js` から import（`js-workflow`）
 
 ## Related Skills
 
