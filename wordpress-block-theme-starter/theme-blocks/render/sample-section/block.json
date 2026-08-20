@@ -1,0 +1,17 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "my-theme/sample-section",
+  "title": "Sample Section",
+  "category": "theme",
+  "icon": "admin-site",
+  "description": "Example render-only dynamic block. File changes apply without template reset.",
+  "textdomain": "my-theme",
+  "supports": {
+    "html": false,
+    "inserter": true,
+    "multiple": true,
+    "reusable": false
+  },
+  "render": "file:./render.php"
+}

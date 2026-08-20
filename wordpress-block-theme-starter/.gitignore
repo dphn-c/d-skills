@@ -1,0 +1,9 @@
+node_modules/
+vendor/
+.DS_Store
+*.log
+assets/css/style.css
+assets/js/bundle.js
+assets/js/bundle.js.map
+theme-blocks/bundled/*/
+!theme-blocks/bundled/.gitkeep

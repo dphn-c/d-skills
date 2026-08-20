@@ -1,0 +1,14 @@
+{
+  "name": "my-theme/theme",
+  "description": "WordPress block theme",
+  "type": "wordpress-theme",
+  "autoload": {
+    "psr-4": {
+      "ThemeName\\": "inc/"
+    }
+  },
+  "require": {},
+  "require-dev": {
+    "squizlabs/php_codesniffer": "^3.7"
+  }
+}

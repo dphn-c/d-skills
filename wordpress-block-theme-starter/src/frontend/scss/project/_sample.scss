@@ -1,0 +1,17 @@
+.p-sample-hero {
+  padding-block: 4rem;
+}
+
+.p-sample-section {
+  padding-block: 2.4rem;
+
+  &__title {
+    margin-bottom: 0.8rem;
+    font-size: 2.4rem;
+    font-weight: 600;
+  }
+
+  &__text {
+    color: rgb(42 51 60 / 72%);
+  }
+}
