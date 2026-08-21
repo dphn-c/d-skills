@@ -26,12 +26,21 @@
 		{
 			"area": "header",
 			"name": "header",
-			"title": "Header"
+			"title": "ヘッダー"
 		},
 		{
 			"area": "footer",
 			"name": "footer",
-			"title": "Footer"
+			"title": "フッター"
+		}
+	],
+	"customTemplates": [
+		{
+			"name": "company",
+			"title": "会社情報",
+			"postTypes": [
+				"page"
+			]
 		}
 	]
 }
